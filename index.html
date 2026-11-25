@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#080b10">
+  <title>BLACKOUT — Newstone</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+        "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2"
+      }
+    }
+  </script>
+  <script type="module" src="./game.js"></script>
+</head>
+<body>
+  <div id="loading"><div class="loading-logo">BLACKOUT<span>.</span></div><div class="loading-bar"></div><p>INITIALISATION DE NEWSTONE</p></div>
+  <main id="landing">
+    <div class="landing-top"><div class="brand">BLACKOUT<span>.</span></div><button id="openAuth" class="outline-button">SE CONNECTER</button></div>
+    <section class="hero">
+      <p class="eyebrow">NEWSTONE · 2026</p>
+      <h1>UNE NOUVELLE VIE.<br>UN DERNIER CONTRAT.</h1>
+      <p class="lead">La ville ne dort jamais. Chaque décision compte.</p>
+      <div class="hero-actions">
+        <button id="playGuest" class="gold-button">JOUER EN INVITÉ</button>
+        <button id="createAccount" class="outline-button">CRÉER UN COMPTE</button>
+      </div>
+      <p class="controls-note">PC : ZQSD / WASD · Souris · E &nbsp;|&nbsp; Mobile : joystick et boutons</p>
+    </section>
+    <div class="landing-footer">BLACKOUT V1.0 <span>NEWSTONE PROJECT</span></div>
+  </main>
+  <section id="gameScreen" class="hidden">
+    <div id="gameMount"></div>
+    <div class="game-ui">
+      <header class="topbar"><div class="brand">BLACKOUT<span>.</span></div><div class="player-panel"><span id="playerName">INVITÉ</span><strong>€ <span id="balance">2 500</span></strong><a id="backHome" href="#">QUITTER</a></div></header>
+      <aside class="mission-card"><small>MISSION ACTIVE · 01</small><h2>FIRST CONTACT</h2><p id="objectiveText">Rejoins le marqueur doré et récupère le dossier.</p><div class="progress-track"><div id="missionProgress"></div></div></aside>
+      <div class="city-label">● NEWSTONE · CENTRE-VILLE</div>
+      <div id="interactHint" class="interact-hint hidden">E · INTERAGIR</div>
+      <div id="gameNotice" class="game-notice"></div>
+      <div id="mobile-controls"><div id="joystick"><div id="stick"></div></div><div class="mobile-actions"><button id="runButton">RUN</button><button id="interactButton">E</button></div></div>
+    </div>
+  </section>
+  <div id="authModal" class="modal hidden">
+    <div class="modal-card">
+      <button id="closeAuth" class="close-button" aria-label="Fermer">×</button>
+      <div class="brand">BLACKOUT<span>.</span></div>
+      <div class="tabs"><button id="loginTab" class="active">CONNEXION</button><button id="signupTab">INSCRIPTION</button></div>
+      <form id="authForm">
+        <label for="username">Pseudo</label><input id="username" type="text" maxlength="18" autocomplete="nickname" placeholder="Ton pseudo">
+        <label for="email">Adresse e-mail</label><input id="email" type="email" required autocomplete="email" placeholder="nom@exemple.com">
+        <label for="password">Mot de passe</label><input id="password" type="password" required minlength="6" autocomplete="current-password" placeholder="6 caractères minimum">
+        <button id="authSubmit" class="gold-button" type="submit">SE CONNECTER</button>
+        <p id="authMessage" role="status"></p>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
