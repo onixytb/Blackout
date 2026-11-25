@@ -304,7 +304,9 @@ function bindControls() {
   });
   window.addEventListener("keyup", (e) => { keys[e.key.toLowerCase()] = false; });
   renderer.domElement.addEventListener("click", () => {
-    if (innerWidth > 700) renderer.domElement.requestPointerLock?.();
+    if (!window.matchMedia("(pointer: coarse)").matches) {
+  renderer.domElement.requestPointerLock?.();
+}
   });
   window.addEventListener("mousemove", (e) => {
     if (document.pointerLockElement === renderer.domElement) yaw -= e.movementX * 0.0025;
