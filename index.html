@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#080b10">
+  <title>BLACKOUT</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js"
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <div id="loading">
+    <div class="logo">BLACKOUT<span>.</span></div>
+    <div class="loading-line"><div></div></div>
+    <p>INITIALISATION DE NEWSTONE</p>
+  </div>
+
+  <div id="game">
+    <header class="topbar">
+      <div class="brand">BLACKOUT<span>.</span></div>
+      <div class="money">€ <span id="money">2 500</span></div>
+    </header>
+
+    <div class="mission">
+      <div class="mission-label">MISSION ACTIVE · 01</div>
+      <h2>FIRST CONTACT</h2>
+      <p id="objective">Retrouvez le dossier dans la zone indiquée.</p>
+      <div class="progress"><div id="progress"></div></div>
+    </div>
+
+    <div class="location">
+      <span class="location-dot"></span>
+      NEWSTONE · CENTRE-VILLE
+    </div>
+
+    <div id="interaction" class="interaction hidden">
+      <span>E</span> INTERAGIR
+    </div>
+
+    <div id="notification"></div>
+
+    <div class="crosshair">+</div>
+
+    <div id="mobile-controls">
+      <div id="joystick">
+        <div id="stick"></div>
+      </div>
+      <div class="mobile-actions">
+        <button id="runButton">RUN</button>
+        <button id="interactButton">E</button>
+      </div>
+    </div>
+
+    <div class="bottom-info">
+      BLACKOUT V1.0 <span>NEWSTONE PROJECT</span>
+    </div>
+  </div>
+
+  <div id="start-screen">
+    <div class="start-content">
+      <div class="logo">BLACKOUT<span>.</span></div>
+      <p class="subtitle">NEWSTONE · 2026</p>
+      <h1>UNE NOUVELLE VIE.<br>UN DERNIER CONTRAT.</h1>
+      <p class="description">La ville ne dort jamais. Chaque décision compte.</p>
+      <button id="startButton">COMMENCER</button>
+      <p class="small">PC : WASD · Souris · E</p>
+    </div>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
