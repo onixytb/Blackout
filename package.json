@@ -1,0 +1,15 @@
+{
+  "name": "blackout-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BLACKOUT - jeu 3D dans le navigateur",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
